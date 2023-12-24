@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(https://i.pinimg.com/originals/4f/ea/71/4fea7145591b8490c836ec002cd2940b.jpg);
+}
+#countdown{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 3rem;
+    font-family: 'Pacifico', cursive;
+    color: #0e0808;
+    background: #000000a8;
+    padding: 1rem;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.countdown-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+}
+.countdown-value{
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    color: rgb(152, 134, 250);
+    animation: pulse 3s infinite;
+}
+.countdown-label{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #999;
+    margin: 0;
+}
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+        color: rgb(142, 125, 230);
+    }
+    50%{
+        transform: scale(1.05);
+        color: rgb(114, 102, 182);
+    }
+    100%{
+        transform: scale(1);
+        color: rgb(152, 134, 250);
+    }
+}
+
+#snow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url(https://blog.csdn.net/w1311004532/article/details/122006494); /* 這是一個夜空的背景圖片，您也可以用其他的圖片或者顏色 */
+  }
+  
+.snowflake {
+position: absolute;
+top: -10px;
+left: 0;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background: white;
+opacity: 0.8;
+transform: rotate(45deg);
+animation: snowfall 10s linear infinite;
+}
+
+
+@keyframes snowfall {
+    0% {
+      transform: translateY(0); /* 雪花的初始位置 */
+    }
+    100% {
+      transform: translateY(100vh); /* 雪花的終點位置，100vh 表示視窗的高度 */
+    }
+  }
+  
