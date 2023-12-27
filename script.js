@@ -46,35 +46,27 @@ updateCountdown();
 
 
 function getPages () {
-    var pages = [];
-    $.ajax ({
-      url: "cards/", // 您需要將 url 改為 "pages/cards/"，這樣才能訪問到正確的文件夾
-      success: function (data) {
-        $ (data).find ("a:contains(.html)").each (function () {
-          var filename = $ (this).attr ("href");
-          pages.push (filename);
-        });
-      },
-      async: false
-    });
-    return pages;
+  var pages = [];
+  for (var i = 1; i <= 39; i++) {
+    var link = "cards/" + i + ".html";
+    pages.push(link);
   }
-  
-  // 您可以用這個函數從數組中隨機選擇一個元素，並返回它
-  function getRandomElement (array) {
-    var index = Math.floor (Math.random () * array.length);
-    return array [index];
-  }
-  
-  // 您可以用這個函數將當前的 html 更換為隨機的 html，並停止倒計時和雪花效果
-  function changeHtml () {
-    var pages = getPages (); // 獲取所有的 html 文件名
-    var randomPage = getRandomElement (pages); // 隨機選擇一個 html 文件名
-    window.location.href = randomPage; // 跳轉到該 html 文件
-    clearInterval (updateInterval); // 停止更新倒計時
-    clearInterval (snowflakeInterval); // 停止創建雪花
-  }
+  return pages;
+}
 
+function getRandomElement (array) {
+  var index = Math.floor (Math.random () * array.length);
+  return array [index];
+}
+
+
+function changeHtml () {
+  var pages = getPages (); 
+  var randomPage = getRandomElement (pages); 
+  window.location.href = randomPage;
+  clearInterval (updateInterval); 
+  clearInterval (snowflakeInterval); 
+}
 
 
   // 定義一個函數，用來創造煙火效果
