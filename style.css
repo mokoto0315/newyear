@@ -8,6 +8,7 @@ body{
     height: 100vh;
     margin: 0;
     background-image: url(https://i.pinimg.com/originals/4f/ea/71/4fea7145591b8490c836ec002cd2940b.jpg);
+    background-repeat: no-repeat;
 }
 #countdown{
     display: flex;
